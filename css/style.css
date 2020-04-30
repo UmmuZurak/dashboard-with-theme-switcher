@@ -1,0 +1,336 @@
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700'); */
+
+@import url('https://fonts.googleapis.com/css?family=Inter:400;700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1em;
+  background: var(--very-dark-blue-bg);
+}
+
+:root {
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --facebook: hsl(195, 100%, 50%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --youtube: hsl(348, 97%, 39%);
+  --very-dark-blue-bg: hsl(230, 17%, 14%);
+  --very-dark-blue-top-bg: hsl(232, 19%, 15%);
+  --dark-desaturated-blue-card-bg: hsl(228, 28%, 20%);
+  --desaturated-blue-text: hsl(228, 34%, 66%);
+  --white-text: hsl(0, 0%, 100%);
+  --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --dark-desaturated-blue-card-bg-hover: hsl(229, 24%, 22%);
+}
+
+[data-theme='light'] {
+  --very-dark-blue-bg: hsl(0, 0%, 100%);
+  --very-dark-blue-top-bg: hsl(225, 100%, 98%);
+  --desaturated-blue-text: hsl(228, 12%, 44%);
+  --white-text: hsl(230, 17%, 14%);
+  --toggle: hsl(230, 22%, 74%);
+  --dark-desaturated-blue-card-bg: hsl(227, 47%, 96%);
+  --dark-desaturated-blue-card-bg-hover: hsl(225, 21%, 89%);
+}
+
+.toggle input[type='checkbox'] {
+  display: none;
+}
+
+.toggle label {
+  background-image: var(--toggle);
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  width: 50px;
+  height: 25px;
+}
+
+.toggle label::after {
+  background: var(--dark-desaturated-blue-card-bg);
+  border-radius: 50%;
+  content: ' ';
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  transition: all ease-in-out 0.3s;
+  width: 21px;
+  height: 21px;
+}
+
+.toggle input[type='checkbox']:checked ~ label {
+  background: var(--desaturated-blue-text);
+}
+
+.toggle input[type='checkbox']:checked ~ label::after {
+  background: hsl(225, 100%, 98%);
+  transform: translateX(25px);
+}
+
+.header-container {
+  background: var(--very-dark-blue-top-bg);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(242px, 1fr));
+  grid-row-gap: 1rem;
+  width: 80%;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+}
+
+.header-content-text h2 {
+  color: var(--white-text);
+  margin-bottom: 0.4rem;
+}
+
+.header-content-text p {
+  color: var(--desaturated-blue-text);
+}
+
+.header-content-switcher {
+  justify-self: end;
+  display: flex;
+  justify-content: center;
+}
+
+.header-content-switcher p {
+  margin-right: 1em;
+  color: var(--desaturated-blue-text);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--very-dark-blue-bg);
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.followers-content {
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1rem;
+  margin-top: -7rem;
+}
+
+.followers-content > div:nth-child(1) {
+  border-top: 2px solid var(--facebook);
+}
+
+.followers-content > div:nth-child(2) {
+  border-top: 2px solid var(--twitter);
+}
+
+.followers-content > div:nth-child(4) {
+  border-top: 2px solid var(--youtube);
+}
+
+.followers {
+  background: var(--dark-desaturated-blue-card-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 0.2rem;
+}
+
+.followers:hover {
+  background: var(--dark-desaturated-blue-card-bg-hover);
+}
+
+.instagram-border {
+  padding: 0 !important;
+}
+
+.border {
+  width: 100%;
+  height: 2px;
+  background-image: var(--instagram);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  margin-top: -24px;
+  margin-bottom: 1.5rem;
+}
+
+.followers-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-media {
+  display: flex;
+  color: var(--desaturated-blue-text);
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.social-media > img {
+  margin-right: 0.4rem;
+}
+
+.social-media p {
+  font-size: 0.9em;
+  margin-top: 2px;
+}
+
+.followers-text h2 {
+  color: var(--white-text);
+  font-size: 3.5em;
+}
+
+.followers-text > p {
+  color: var(--desaturated-blue-text);
+  font-size: 0.8em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+
+.followed {
+  color: var(--desaturated-blue-text);
+}
+
+.followed {
+  display: flex;
+}
+
+.followed > div {
+  margin-top: -6px;
+  margin-right: 0.4rem;
+}
+
+.followed p {
+  color: var(--lime-green);
+  font-size: 0.8em;
+}
+
+.down {
+  color: var(--bright-red) !important;
+}
+
+.overview-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.overview-title {
+  margin-bottom: 1rem;
+}
+
+.overview-title h3 {
+  color: var(--white-text);
+}
+
+.overview-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1rem;
+}
+
+.overview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.3rem;
+  background: var(--dark-desaturated-blue-card-bg);
+  border-radius: 0.2rem;
+}
+
+.overview:hover {
+  background: var(--dark-desaturated-blue-card-bg-hover);
+}
+
+.overview-text {
+  width: 100%;
+}
+
+.overview-likes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.overview-likes p {
+  color: var(--desaturated-blue-text);
+}
+
+.overview-numbers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.overview-numbers h2 {
+  color: var(--white-text);
+}
+
+.overview-numbers > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 604px) {
+  .border {
+    margin-top: 0;
+  }
+
+  .instagram-border .followers-text {
+    margin-top: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .header-content-switcher {
+    justify-self: start;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .followers-content {
+    grid-row-gap: 1.6rem;
+  }
+
+  .overview-content {
+    grid-row-gap: 1.2rem;
+  }
+
+  .header-content,
+  .followers-content,
+  .overview-container {
+    width: 90%;
+  }
+
+  .header-content-text {
+    padding-bottom: 1rem;
+    border-bottom: 0.4px solid var(--desaturated-blue-text);
+  }
+}
