@@ -22,23 +22,23 @@ body {
   --twitter: hsl(203, 89%, 53%);
   --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
   --youtube: hsl(348, 97%, 39%);
-  --very-dark-blue-bg: hsl(230, 17%, 14%);
-  --very-dark-blue-top-bg: hsl(232, 19%, 15%);
-  --dark-desaturated-blue-card-bg: hsl(228, 28%, 20%);
-  --desaturated-blue-text: hsl(228, 34%, 66%);
-  --white-text: hsl(0, 0%, 100%);
-  --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
-  --dark-desaturated-blue-card-bg-hover: hsl(229, 24%, 22%);
-}
-
-[data-theme='light'] {
   --very-dark-blue-bg: hsl(0, 0%, 100%);
   --very-dark-blue-top-bg: hsl(225, 100%, 98%);
+  --dark-desaturated-blue-card-bg: hsl(227, 47%, 96%);
   --desaturated-blue-text: hsl(228, 12%, 44%);
   --white-text: hsl(230, 17%, 14%);
   --toggle: hsl(230, 22%, 74%);
-  --dark-desaturated-blue-card-bg: hsl(227, 47%, 96%);
   --dark-desaturated-blue-card-bg-hover: hsl(225, 21%, 89%);
+}
+
+[data-theme='dark'] {
+  --very-dark-blue-bg: hsl(230, 17%, 14%);
+  --very-dark-blue-top-bg: hsl(232, 19%, 15%);
+  --desaturated-blue-text: hsl(228, 34%, 66%);
+  --white-text: hsl(0, 0%, 100%);
+  --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --dark-desaturated-blue-card-bg: hsl(228, 28%, 20%);
+  --dark-desaturated-blue-card-bg-hover: hsl(229, 24%, 22%);
 }
 
 .toggle input[type='checkbox'] {
@@ -46,7 +46,7 @@ body {
 }
 
 .toggle label {
-  background-image: var(--toggle);
+  background: var(--desaturated-blue-text);
   border-radius: 50px;
   cursor: pointer;
   display: inline-block;
@@ -57,7 +57,7 @@ body {
 }
 
 .toggle label::after {
-  background: var(--dark-desaturated-blue-card-bg);
+  background: hsl(225, 100%, 98%);
   border-radius: 50%;
   content: ' ';
   cursor: pointer;
@@ -71,11 +71,11 @@ body {
 }
 
 .toggle input[type='checkbox']:checked ~ label {
-  background: var(--desaturated-blue-text);
+  background-image: var(--toggle);
 }
 
 .toggle input[type='checkbox']:checked ~ label::after {
-  background: hsl(225, 100%, 98%);
+  background: var(--dark-desaturated-blue-card-bg);
   transform: translateX(25px);
 }
 
